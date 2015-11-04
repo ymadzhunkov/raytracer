@@ -13,10 +13,12 @@
 //   Organization:  
 //
 // =====================================================================================
+#include "platform.h"
 #include "config.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
 int main(int argc, char *argv[]) {
   printf("raytracer version %d.%d\n", raytracer_VERSION_MAJOR,
          raytracer_VERSION_MINOR);
@@ -24,6 +26,7 @@ int main(int argc, char *argv[]) {
     fprintf(stdout, "Usage: %s number\n", argv[0]);
     return 1;
   }
+   uint64 test = 0;
   double inputValue = atof(argv[1]);
   double outputValue = sqrt(inputValue);
   fprintf(stdout, "The square root of %g is %g\n", inputValue, outputValue);
