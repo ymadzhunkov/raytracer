@@ -14,21 +14,21 @@
 //
 // =====================================================================================
 #include "platform.h"
-#include "config.h"
+#include "config.h" // Version defined here
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
+#include "ranmar.h"
+
 int main(int argc, char *argv[]) {
   printf("raytracer version %d.%d\n", raytracer_VERSION_MAJOR,
          raytracer_VERSION_MINOR);
-  if (argc < 2) {
-    fprintf(stdout, "Usage: %s number\n", argv[0]);
-    return 1;
-  }
-   uint64 test = 0;
-  double inputValue = atof(argv[1]);
-  double outputValue = sqrt(inputValue);
-  fprintf(stdout, "The square root of %g is %g\n", inputValue, outputValue);
+
+   Ranmar rnd(120);
+   for (uint32 i = 0; i < 100; i++) {
+      printf("%f\n", rnd.getUniform().getValue());
+   }
+
   return 0;
 }

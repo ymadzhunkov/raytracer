@@ -14,5 +14,6 @@ configure_file (
 
 include_directories("${PROJECT_BINARY_DIR}")
 include_directories("${PROJECT_SOURCE_DIR}/system")
+include_directories("${PROJECT_SOURCE_DIR}/sampling")
 
 add_executable(raytracer main.cpp)

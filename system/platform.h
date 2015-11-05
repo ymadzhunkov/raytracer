@@ -41,4 +41,7 @@ typedef __UINT16_TYPE__ uint16;
 typedef __UINT8_TYPE__  uint8;
 
 typedef __INTPTR_TYPE__ intptr;
+
+#define PURE __attribute__ ((const))
+#define restrict __restrict__
 #endif
