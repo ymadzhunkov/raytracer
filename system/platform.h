@@ -44,4 +44,5 @@ typedef __INTPTR_TYPE__ intptr;
 
 #define PURE __attribute__ ((const))
 #define restrict __restrict__
+#define __forceinline          inline __attribute__((always_inline))
 #endif
