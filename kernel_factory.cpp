@@ -27,7 +27,7 @@ ComputationalKernelFactory::ComputationalKernelFactory() {
 
 }
 ComputationalKernelFactory::~ComputationalKernelFactory() {
-
+   printf("Destructing Computational Kernel Factory");
 }
 int ComputationalKernelFactory::registerComputationalKernel(
     IComputationalKernelImplementation &implementation) {
@@ -35,4 +35,12 @@ int ComputationalKernelFactory::registerComputationalKernel(
 
    printf("registering %s isa = %d\n", descriptor.getDefinition(),
           descriptor.getISA());
+   return 0;
+}
+int ComputationalKernelFactory::deregisterComputationalKernel(
+    IComputationalKernelImplementation &implementation) {
+   const IComputationalKernelDescribtor & descriptor = implementation.getDescription();
+   printf("deregistering %s isa = %d\n", descriptor.getDefinition(),
+          descriptor.getISA());
+   return 0;
 }

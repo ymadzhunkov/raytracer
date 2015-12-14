@@ -15,20 +15,22 @@
 // =====================================================================================
 #include "platform.h"
 #include "config.h" // Version defined here
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
 #include "intrinsics.h"
 #include "atomic.h"
 #include "ranmar.h"
 #include "kernel.h"
+#include "managers.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
 int main(int argc, char *argv[]) {
   printf("raytracer version %d.%d\n", raytracer_VERSION_MAJOR,
          raytracer_VERSION_MINOR);
 
    Ranmar rnd(120);
-   
-   for (uint32 i = 0; i < 100; i++) {
+   for (uint32 i = 0; i < 1; i++) {
       printf("%f\n", rnd.getUniform().getValue());
    }
 

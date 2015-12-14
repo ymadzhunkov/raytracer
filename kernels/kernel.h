@@ -55,6 +55,8 @@ public:
 
    int registerComputationalKernel(
        IComputationalKernelImplementation &implementation);
+   int deregisterComputationalKernel(
+       IComputationalKernelImplementation &implementation);
 
 private:
    static ComputationalKernelFactory * instance;
@@ -65,6 +67,9 @@ class ComputationalKernelRegister {
 public:
    ComputationalKernelRegister() {
       ComputationalKernelFactory::getInstance()->registerComputationalKernel(kernel);
+   }
+   ~ComputationalKernelRegister() {
+      ComputationalKernelFactory::getInstance()->deregisterComputationalKernel(kernel);
    }
 private:
    ComputationalKernel kernel;
